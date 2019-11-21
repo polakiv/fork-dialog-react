@@ -20,18 +20,18 @@ let initialState = {
 
 const dialogsReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SEND_MESSAGE:// при обновлении стейта
+        case SEND_MESSAGE:
             let body = action.newMessageBody;
             return {
-                ...state, // делаем копию стейта
-                messages: [...state.messages, {id: 6, message: body}] // body это пришедший сюда newMessageBody
+                ...state,
+                messages: [...state.messages, {id: 6, message: body}]
             };
         default:
-            return state; // берется из этого стейта, вверху
+            return state;
     }
 }
 
 export const sendMessageCreator = (newMessageBody) => ({type: SEND_MESSAGE, newMessageBody})
 
 
-export default dialogsReducer; 
+export default dialogsReducer;

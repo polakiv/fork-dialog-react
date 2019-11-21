@@ -8,15 +8,11 @@ import AddMessageForm from "./AddMessageForm/AddMessageForm";
 
 const Dialogs = (props) => {
 
-    let state = props.dialogsPage; // приходят пропсы из редьюсера (то есть через DialogsContainer)
+    let state = props.dialogsPage;
 
-    let dialogsElements = state.dialogs.map( d => <DialogItem name={d.name} key={d.id} id={d.id} />  ); 
-	// помещает карту имен из локального стейта ( DialogsContainer) в переменную с намерением распечатать ниже...
+    let dialogsElements = state.dialogs.map( d => <DialogItem name={d.name} key={d.id} id={d.id} />  );
     let messagesElements = state.messages.map( m => <Message message={m.message} key={m.id} /> );
-    // помещает карту сообщений из локального стейта ( DialogsContainer) в переменную с намерением распечатать ниже...
-    
-
-    let newMessageBody = state.newMessageBody;// приходит из стейта ( DialogsContainer) данные newMessageBody
+    let newMessageBody = state.newMessageBody;
 
     let addNewMessage = (values) => {
         props.sendMessage(values.newMessageBody);
