@@ -1,4 +1,4 @@
-import { authAPI } from "../api/api";
+
 import { stopSubmit } from "redux-form";
 
 const INITIALIZED_SUCCESS = 'INITIALIZED_SUCCESS';
@@ -19,15 +19,12 @@ const appReducer = (state = initialState, action) => {
         default:
             return state;
     }
-}
-
-
+} 
 export const initializedSuccess = () => ({ type: INITIALIZED_SUCCESS });
 
 export const initializeApp = () => (dispatch) => {
-
     dispatch(initializedSuccess());
 }
 
 
-export default appReducer;
+export default appReducer; 
